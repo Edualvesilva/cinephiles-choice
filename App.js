@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Image,
+  Pressable,
 } from "react-native";
 
 import logo from "./assets/images/logo.png";
@@ -20,8 +21,13 @@ export default function App() {
           <Text>Cinephile's Choice</Text>
         </View>
         <View style={styles.viewButtons}>
-          <Button title="Search Movies" />
-          <Button title="Favorites" />
+          <Pressable>
+            <Text>Search Movies</Text>
+          </Pressable>
+
+          <Pressable>
+            <Text>Favorites</Text>
+          </Pressable>
         </View>
         <View style={styles.footer}>
           <Button title="Privacy" />
