@@ -21,12 +21,12 @@ export default function App() {
           <Text>Cinephile's Choice</Text>
         </View>
         <View style={styles.viewButtons}>
-          <Pressable>
-            <Text>Search Movies</Text>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Search Movies</Text>
           </Pressable>
 
-          <Pressable>
-            <Text>Favorites</Text>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Favorites</Text>
           </Pressable>
         </View>
         <View style={styles.footer}>
@@ -51,11 +51,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-end",
   },
+  button: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    padding: 16,
+    backgroundColor: "#5451a6",
+  },
+  buttonText: { color: "#fff" },
 
   logo: { width: 128, height: 128 },
 
   viewButtons: {
-    backgroundColor: "orange",
     flex: 4,
     justifyContent: "space-evenly",
     flexDirection: "row",
