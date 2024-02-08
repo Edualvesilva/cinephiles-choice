@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import logo from "./assets/images/logo.png";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function App() {
   return (
@@ -20,13 +21,20 @@ export default function App() {
           <Image source={logo} style={styles.logo} />
           <Text>Cinephile's Choice</Text>
         </View>
+
         <View style={styles.viewButtons}>
           <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>Search Movies</Text>
+            <Text style={styles.buttonText}>
+              <Ionicons name="search" size={16} color="white" />
+              Search Movies
+            </Text>
           </Pressable>
 
           <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>Favorites</Text>
+            <Text style={styles.buttonText}>
+              <Ionicons name="star" size={16} color="gold" />
+              Favorites
+            </Text>
           </Pressable>
         </View>
         <View style={styles.footer}>
