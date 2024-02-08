@@ -13,7 +13,7 @@ export default function App() {
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.container}>
         <View style={styles.viewLogo}>
-          <Text>Movies</Text>
+          <Text>Cinephile's Choice</Text>
         </View>
         <View style={styles.viewButtons}>
           <Button title="Search Movies" />
@@ -29,14 +29,16 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: "yellow", flex: 1, padding: "auto" },
+  container: {
+    backgroundColor: "yellow",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   viewLogo: {
     backgroundColor: "green",
     flex: 4,
-    width: "90%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    textAlign: "center",
+    width: "80%",
     alignItems: "center",
     justifyContent: "flex-end",
   },
@@ -46,16 +48,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     flexDirection: "row",
     alignItems: "flex-start",
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: "90%",
+    width: "80%",
   },
   footer: {
     backgroundColor: "red",
     flex: 1,
-    width: "90%",
-    marginLeft: "auto",
-    marginRight: "auto",
+    width: "80%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
