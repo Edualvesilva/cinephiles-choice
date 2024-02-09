@@ -11,15 +11,37 @@ import {
 
 import logo from "./assets/images/logo.png";
 import { Ionicons } from "@expo/vector-icons";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
 
+/* Manter a tela splash visível enquanto não programarmos a ação de ocultar */
+SplashScreen.preventAutoHideAsync();
 export default function App() {
+  const [fontsLoaded, fontError] = useFonts({
+    "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
+  });
+
+  /* Função atrelada ao Hook callback.
+  Quando uma função está conectada ao useCallback, garantimos que a referência dela é armazenada na memória somente uma vez. */
+  const onLayoutRootView = useCallback(async () => {
+    /* Se estiver tudo ok com o carregamento */
+    if (fontsLoaded || fontError) {
+      /* Escondemos o splashScreen */
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
   return (
     <>
       <StatusBar barStyle="light-content" />
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
         <View style={styles.viewLogo}>
           <Image source={logo} style={styles.logo} />
-          <Text>Cinephile's Choice</Text>
+          <Text style={styles.title}>Cinephile's Choice</Text>
         </View>
 
         <View style={styles.viewButtons}>
@@ -69,6 +91,11 @@ const styles = StyleSheet.create({
 
   logo: { width: 128, height: 128 },
 
+  title: {
+    fontFamily: "Monoton-Regular",
+    fontSize: 36,
+    color: "#5a51a6",
+  },
   viewButtons: {
     flex: 4,
     justifyContent: "space-evenly",
