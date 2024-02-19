@@ -20,6 +20,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
+    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
   });
 
   /* Função atrelada ao Hook callback.
@@ -41,7 +42,8 @@ export default function App() {
       <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
         <View style={styles.viewLogo}>
           <Image source={logo} style={styles.logo} />
-          <Text style={styles.title}>Cinephile's Choice</Text>
+          <Text style={styles.title}>Cinephile's</Text>
+          <Text style={styles.title}>Choice</Text>
         </View>
 
         <View style={styles.viewButtons}>
@@ -60,8 +62,17 @@ export default function App() {
           </Pressable>
         </View>
         <View style={styles.footer}>
-          <Button title="Privacy" />
-          <Button title="About" />
+          <Pressable style={styles.footerButtons}>
+            <Text style={styles.buttonText}>
+              <Ionicons name="lock-closed" size={16} color="white" />
+            </Text>
+          </Pressable>
+
+          <Pressable style={styles.footerButtons}>
+            <Text style={styles.buttonText}>
+              <Ionicons name="lock-closed" size={16} color="white" />
+            </Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </>
@@ -87,7 +98,12 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "#5451a6",
   },
-  buttonText: { color: "#fff" },
+  buttonText: {
+    color: "#fff",
+    fontFamily: "NotoSans",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
 
   logo: { width: 128, height: 128 },
 
