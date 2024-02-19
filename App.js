@@ -11,35 +11,13 @@ import {
 
 import logo from "./assets/images/logo.png";
 import { Ionicons } from "@expo/vector-icons";
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from "react";
+import SafeContainer from "./src/components/SafeContainer";
 
-/* Manter a tela splash visível enquanto não programarmos a ação de ocultar */
-SplashScreen.preventAutoHideAsync();
 export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
-    "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
-    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
-  });
-
-  /* Função atrelada ao Hook callback.
-  Quando uma função está conectada ao useCallback, garantimos que a referência dela é armazenada na memória somente uma vez. */
-  const onLayoutRootView = useCallback(async () => {
-    /* Se estiver tudo ok com o carregamento */
-    if (fontsLoaded || fontError) {
-      /* Escondemos o splashScreen */
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
   return (
     <>
       <StatusBar barStyle="light-content" />
-      <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
+      <SafeContainer>
         <View style={styles.viewLogo}>
           <Image source={logo} style={styles.logo} />
           <Text style={styles.title}>Cinephile's</Text>
@@ -64,30 +42,23 @@ export default function App() {
         <View style={styles.footer}>
           <Pressable style={styles.footerButtons}>
             <Text style={styles.buttonText}>
-              <Ionicons name="lock-closed" size={16} color="white" />
-              Privacy
+              <Ionicons name="lock-closed" size={16} color="white" /> Privacy
             </Text>
           </Pressable>
 
           <Pressable style={styles.footerButtons}>
             <Text style={styles.buttonText}>
-              <Ionicons name="lock-closed" size={16} color="white" />
+              <Ionicons name="information-circle" size={16} color="white" />{" "}
               About
             </Text>
           </Pressable>
         </View>
-      </SafeAreaView>
+      </SafeContainer>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
   viewLogo: {
     flex: 4,
     width: "80%",
