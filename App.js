@@ -65,12 +65,14 @@ export default function App() {
           <Pressable style={styles.footerButtons}>
             <Text style={styles.buttonText}>
               <Ionicons name="lock-closed" size={16} color="white" />
+              Privacy
             </Text>
           </Pressable>
 
           <Pressable style={styles.footerButtons}>
             <Text style={styles.buttonText}>
               <Ionicons name="lock-closed" size={16} color="white" />
+              About
             </Text>
           </Pressable>
         </View>
@@ -93,8 +95,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   button: {
-    borderStyle: "solid",
-    borderWidth: 2,
     padding: 16,
     backgroundColor: "#5451a6",
   },
@@ -120,11 +120,14 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   footer: {
-    backgroundColor: "red",
+    backgroundColor: "#5451a6",
     flex: 1,
-    width: "80%",
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  footerButtons: {
+    padding: 16,
   },
 });
