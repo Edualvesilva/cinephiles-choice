@@ -18,8 +18,8 @@ Official Website:
 ## Branch 03
 
 - Creation of basic Screens: About and Privacy
-- Component `Scrollview` for content bigger than the Screen with support to scroll
-- Component `Linking` for creation of link to the web
+- Component `ScrollView` for content larger than the screen with support for scrolling.
+- Component `Linking` for the creation of links to the web
 
 ## Branch 02
 
