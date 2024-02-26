@@ -15,6 +15,17 @@ Official Website:
 - React Navigation: https://reactnavigation.org
 - Expo Router: https://docs.expo.dev/router/introduction
 
+### How to use React Navigation with navigation stack
+
+#### Installation Packages
+
+React Navigation : `npm install @react-navigation/native`
+
+Dependencies for navigation:
+`npx expo install react-native-screens react-native-safe-area-context`
+
+stack navigation mechanism: `npm install @react-navigation/native-stack`
+
 ## Branch 03
 
 - Creation of basic Screens: About and Privacy
