@@ -46,7 +46,6 @@ export default function Searchmovies() {
 const styles = StyleSheet.create({
   Container: { flex: 1 },
   texts: {
-    fontWeight: "bold",
     marginBottom: 10,
     marginTop: 10,
     paddingLeft: 10,
