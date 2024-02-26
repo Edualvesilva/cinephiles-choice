@@ -13,7 +13,10 @@ export default function Home({ navigation }) {
       </View>
 
       <View style={styles.viewButtons}>
-        <Pressable style={styles.button}>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Searchmovies")}
+        >
           <Text style={styles.buttonText}>
             <Ionicons name="search" size={16} color="white" />
             Search Movies
