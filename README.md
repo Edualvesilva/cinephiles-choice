@@ -6,6 +6,12 @@ An example of a cross-platform native app created with React Native and Expo.
 
 Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSCode to ease the use of programming components in this project.
 
+## Branch 03
+
+- Creation of basic Screens: About and Privacy
+- Component `Scrollview` for content bigger than the Screen with support to scroll
+- Component `Linking` for creation of link to the web
+
 ## Branch 02
 
 ### Utilizationo of additional fonts

@@ -7,87 +7,81 @@ export default function Privacy() {
     <SafeContainer>
       <View style={styles.subContainer}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text style={styles.titulo}>
-            Política de Privacidade para o app SEU APP
+          <Text style={styles.title}>
+            Privacy Policy for the app cinephile's Choice
+          </Text>
+          <Text style={styles.text}>
+            Your privacy is important to us. It is the policy of Cinephile's
+            Choice to respect your privacy regarding any information we may
+            collect while operating the Cinephile's Choice website and other
+            sites we own and operate.
+          </Text>
+          <Text style={styles.text}>
+            We request personal information only when we truly need it to
+            provide you with a service. We do so by fair and lawful means, with
+            your knowledge and consent. We also inform you why we are collecting
+            it and how it will be used.
+          </Text>
+          <Text style={styles.text}>
+            We only retain collected information for as long as necessary to
+            provide the requested service. When we store data, we protect it
+            within commercially acceptable means to prevent loss and theft, as
+            well as unauthorized access, disclosure, copying, use, or
+            modification.
+          </Text>
+          <Text style={styles.text}>
+            We do not share personal identification information publicly or with
+            third parties, except when required by law.
+          </Text>
+          <Text style={styles.text}>
+            Our website may contain links to external sites that are not
+            operated by us. Please be aware that we have no control over the
+            content and practices of these sites and cannot accept
+            responsibility for their respective privacy policies.
+          </Text>
+          <Text style={styles.text}>
+            You are free to refuse our request for personal information,
+            understanding that we may not be able to provide some of the desired
+            services.
+          </Text>
+          <Text style={styles.text}>
+            Your continued use of our website will be considered acceptance of
+            our privacy and personal information practices. If you have any
+            questions about how we handle user data and personal information,
+            please contact us.
+          </Text>
+          <Text style={styles.subtitle}>User Commitment</Text>
+          <Text style={styles.text}>
+            The user agrees to make appropriate use of the content and
+            information that Cinephile's Choice offers on the website, including
+            but not limited to:
+          </Text>
+          <Text style={styles.text}>
+            A) Not engage in activities that are illegal or contrary to good
+            faith and public order;
+          </Text>
+          <Text style={styles.text}>
+            B) Not disseminate propaganda or content of a racist, xenophobic
+            nature, or online gambling, games of chance, any type of illegal
+            pornography, terrorism propaganda, or against human rights;
+          </Text>
+          <Text style={styles.text}>
+            C) Not to cause harm to the physical (hardware) and logical
+            (software) systems of Cinephile's Choice, its suppliers, or third
+            parties, or to introduce or spread computer viruses or any other
+            hardware or software systems capable of causing the aforementioned
+            damages.
           </Text>
 
-          <Text style={styles.texto}>
-            A sua privacidade é importante para nós. É política do Dá Hora
-            Filmes respeitar a sua privacidade em relação a qualquer informação
-            sua que possamos coletar no site Dá Hora Filmes, e outros sites que
-            possuímos e operamos.
+          <Text style={styles.subtitle}>Further Information</Text>
+          <Text style={styles.text}>
+            We hope this clarifies things. As mentioned earlier, if there is
+            something that you are not sure whether you need or not, it is
+            generally safer to leave cookies enabled if you interact with one of
+            the features you use on our site.
           </Text>
-
-          <Text style={styles.texto}>
-            Solicitamos informações pessoais apenas quando realmente precisamos
-            delas para lhe fornecer um serviço. Fazemo-lo por meios justos e
-            legais, com o seu conhecimento e consentimento. Também informamos
-            por que estamos coletando e como será usado.
-          </Text>
-
-          <Text style={styles.texto}>
-            Apenas retemos as informações coletadas pelo tempo necessário para
-            fornecer o serviço solicitado. Quando armazenamos dados, protegemos
-            dentro de meios comercialmente aceitáveis ​para evitar perdas e
-            roubos, bem como acesso, divulgação, cópia, uso ou modificação não
-            autorizados.
-          </Text>
-
-          <Text style={styles.texto}>
-            Não compartilhamos informações de identificação pessoal publicamente
-            ou com terceiros, exceto quando exigido por lei.
-          </Text>
-
-          <Text style={styles.texto}>
-            O nosso site pode ter links para sites externos que não são operados
-            por nós. Esteja ciente de que não temos controle sobre o conteúdo e
-            práticas desses sites e não podemos aceitar responsabilidade por
-            suas respectivas políticas de privacidade.
-          </Text>
-
-          <Text style={styles.texto}>
-            Você é livre para recusar a nossa solicitação de informações
-            pessoais, entendendo que talvez não possamos fornecer alguns dos
-            serviços desejados.
-          </Text>
-          <Text style={styles.texto}>
-            O uso continuado de nosso site será considerado como aceitação de
-            nossas práticas em torno de privacidade e informações pessoais. Se
-            você tiver alguma dúvida sobre como lidamos com dados do usuário e
-            informações pessoais, entre em contato conosco.
-          </Text>
-          <Text style={styles.subtitulo}>Compromisso do Usuário</Text>
-          <Text style={styles.texto}>
-            O usuário se compromete a fazer uso adequado dos conteúdos e da
-            informação que o Dá Hora Filmes oferece no site e com caráter
-            enunciativo, mas não limitativo:
-          </Text>
-          <Text style={styles.texto}>
-            A) Não se envolver em atividades que sejam ilegais ou contrárias à
-            boa fé a à ordem pública;
-          </Text>
-          <Text style={styles.texto}>
-            B) Não difundir propaganda ou conteúdo de natureza racista,
-            xenofóbica, ou casas de apostas online, jogos de sorte e azar,
-            qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou
-            contra os direitos humanos;
-          </Text>
-          <Text style={styles.texto}>
-            C) Não causar danos aos sistemas físicos (hardwares) e lógicos
-            (softwares) do Dá Hora Filmes, de seus fornecedores ou terceiros,
-            para introduzir ou disseminar vírus informáticos ou quaisquer outros
-            sistemas de hardware ou software que sejam capazes de causar danos
-            anteriormente mencionados.
-          </Text>
-          <Text style={styles.subtitulo}>Mais informações</Text>
-          <Text style={styles.texto}>
-            Esperemos que esteja esclarecido e, como mencionado anteriormente,
-            se houver algo que você não tem certeza se precisa ou não,
-            geralmente é mais seguro deixar os cookies ativados, caso interaja
-            com um dos recursos que você usa em nosso site.
-          </Text>
-          <Text style={styles.texto}>
-            Esta política é efetiva a partir de Nov/2022.
+          <Text style={styles.text}>
+            This policy is effective as of Nov/2022.
           </Text>
         </ScrollView>
       </View>
@@ -96,17 +90,17 @@ export default function Privacy() {
 }
 
 const styles = StyleSheet.create({
-  titulo: {
+  title: {
     fontWeight: "bold",
     fontSize: 18,
     marginVertical: 8,
   },
-  subtitulo: {
+  subtitle: {
     fontWeight: "bold",
     fontSize: 16,
     marginVertical: 8,
   },
-  texto: {
+  text: {
     marginVertical: 8,
   },
 });
