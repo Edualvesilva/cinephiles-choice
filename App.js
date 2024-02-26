@@ -14,13 +14,23 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerStyle: { backgroundColor: "#5451a6" },
+            headerTintColor: "white",
+          }}
+        >
           <Stack.Screen
             name="Home"
             component={Home}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="About" component={About} />
+          <Stack.Screen
+            name="About"
+            component={About}
+            options={{ title: "Discover our app" }}
+          />
           <Stack.Screen name="Privacy" component={Privacy} />
         </Stack.Navigator>
       </NavigationContainer>
