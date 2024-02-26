@@ -1,10 +1,17 @@
 import SafeContainer from "../components/SafeContainer";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
 export default function Searchmovies() {
-  function message() {
-    alert("This is a simple alert!");
-  }
+  const [text, setText] = useState("");
+  const handleSubmit = () => {
+    if (text.trim() == "") {
+      alert("Please type a movie before submitting!");
+    } else {
+      alert("You submitted: " + text);
+    }
+  };
+
   return (
     <SafeContainer>
       <View style={styles.Container}>
@@ -18,10 +25,15 @@ export default function Searchmovies() {
 
         <View style={styles.inputArea}>
           <Ionicons name="film" size={40} color="#5451a6" style={styles.icon} />
-          <TextInput style={styles.input} placeholder="Type your movie!" />
+          <TextInput
+            style={styles.input}
+            placeholder="Type your movie!"
+            onSubmitEditing={handleSubmit}
+            onChangeText={setText}
+          />
         </View>
         <Button
-          onPress={message}
+          onPress={handleSubmit}
           title="Search"
           color="#5451a6"
           accessibilityLabel="a Search button"
@@ -33,7 +45,12 @@ export default function Searchmovies() {
 
 const styles = StyleSheet.create({
   Container: { flex: 1 },
-  texts: { fontWeight: "bold", marginBottom: 10, paddingLeft: 10 },
+  texts: {
+    fontWeight: "bold",
+    marginBottom: 10,
+    marginTop: 10,
+    paddingLeft: 10,
+  },
   inputArea: { alignItems: "center", flexDirection: "row" },
   icon: {
     marginRight: 10,
