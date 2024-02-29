@@ -1,5 +1,12 @@
 import SafeContainer from "../components/SafeContainer";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  Vibration,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 export default function Searchmovies() {
@@ -7,6 +14,7 @@ export default function Searchmovies() {
   const handleSubmit = () => {
     if (text.trim() == "") {
       alert("Please type a movie before submitting!");
+      Vibration.vibrate(500);
     } else {
       alert("You submitted: " + text);
     }
