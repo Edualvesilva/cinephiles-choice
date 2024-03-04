@@ -6,6 +6,13 @@ An example of a cross-platform native app created with React Native and Expo.
 
 Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSCode to ease the use of programming components in this project.
 
+## Branch 05
+
+- Components/native resources: `TextInput`,`Vibration` and `Alert`
+- Events: `OnChangeText` in `TextInput` for the capture in real time of the movie's name typed and atualization in the `state` using the function `movieTyped`
+- `onPress` in `Button` to use the `SearchMovie`
+- `OnSubmitEditing` in `TextInput` to use the function `searchMovie`
+
 ## Branch 04
 
 To manage navigation features, use a navigation library. The most well-known ones are **React Navigation** and **Expo Router**. Currently (February/2024), the most used and considered standard library is React Navigation.
