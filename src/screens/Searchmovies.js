@@ -6,20 +6,28 @@ import {
   TextInput,
   Button,
   Vibration,
+  Alert,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 export default function Searchmovies() {
   const [text, setText] = useState("");
-  const handleSubmit = () => {
-    if (text.trim() == "") {
-      alert("Please type a movie before submitting!");
-      Vibration.vibrate(500);
-    } else {
-      alert("You submitted: " + text);
-    }
+
+  /* Capturing and registering in the state the searched movie  */
+  const movieTyped = (valueTyped) => {
+    /* valueTyped is an automatic param coming from OnChangeText */
+    setText(valueTyped);
   };
 
+  const searchMovie = () => {
+    /* if the state is not defined */
+    if (!text) {
+      Vibration.vibrate(500);
+      return Alert.alert("ops!", " You must type the movie!");
+    }
+
+    Alert.alert("You searched for: " + text);
+  };
   return (
     <SafeContainer>
       <View style={styles.Container}>
@@ -32,16 +40,20 @@ export default function Searchmovies() {
         </Text>
 
         <View style={styles.inputArea}>
-          <Ionicons name="film" size={40} color="#5451a6" style={styles.icon} />
+          <Ionicons name="film" size={44} color="#5451a6" style={styles.icon} />
           <TextInput
             style={styles.input}
             placeholder="Type your movie!"
-            onSubmitEditing={handleSubmit}
-            onChangeText={setText}
+            placeholderTextColor="#5451a6"
+            maxLength={30}
+            autoFocus
+            enterKeyHint="search"
+            onSubmitEditing={searchMovie}
+            onChangeText={movieTyped}
           />
         </View>
         <Button
-          onPress={handleSubmit}
+          onPress={searchMovie}
           title="Search"
           color="#5451a6"
           accessibilityLabel="a Search button"
@@ -54,19 +66,17 @@ export default function Searchmovies() {
 const styles = StyleSheet.create({
   Container: { flex: 1 },
   texts: {
-    marginBottom: 10,
+    marginBottom: 3,
     marginTop: 10,
-    paddingLeft: 10,
+    paddingLeft: 4,
   },
-  inputArea: { alignItems: "center", flexDirection: "row" },
-  icon: {
-    marginRight: 10,
-  },
+  inputArea: { flexDirection: "row", justifyContent: "space-between" },
+
   input: {
-    height: 40,
-    margin: 12,
-    width: "80%",
+    flex: 0.95,
     borderWidth: 1,
-    padding: 10,
+    borderColor: "#5451a6",
+    padding: 8,
+    marginBottom: 10,
   },
 });
