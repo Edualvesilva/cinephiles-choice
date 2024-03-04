@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
-export default function Searchmovies() {
+export default function Searchmovies({ navigation }) {
   const [text, setText] = useState("");
 
   /* Capturing and registering in the state the searched movie  */
@@ -26,7 +26,9 @@ export default function Searchmovies() {
       return Alert.alert("ops!", " You must type the movie!");
     }
 
-    Alert.alert("You searched for: " + text);
+    /* Redirection to the results screen through the movie typed
+     obs: don't forget to define the prop navigation in the component*/
+    navigation.navigate("Results", { text });
   };
   return (
     <SafeContainer>

@@ -59,8 +59,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     fontSize: 18,
   },
-  title: {},
-  text: {},
+
   logotmdb: { alignItems: "center", marginVertical: 15 },
   appName: {
     fontWeight: "bold",

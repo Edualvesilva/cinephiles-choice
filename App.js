@@ -6,6 +6,7 @@ import Home from "./src/screens/Home";
 import About from "./src/screens/About";
 import Privacy from "./src/screens/Privacy";
 import Searchmovies from "./src/screens/Searchmovies";
+import Results from "./src/screens/Results";
 // Initialization stack navigation mechanism
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ export default function App() {
             component={Searchmovies}
             options={{ title: "Find Your Movie" }}
           />
+          <Stack.Screen name="Results" component={Results} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
