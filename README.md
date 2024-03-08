@@ -17,6 +17,10 @@ Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSC
 - Installation of the lib **oxios**
 - Configuration/Exportating of `services/api-moviedb.js` containing the basic programming for accessing the API used in different parts of the app
 
+#### Showing the Results
+
+- Using the component `FlatList` to dinamic listing of results
+
 ## Branch 05
 
 - Components/native resources: `TextInput`,`Vibration` and `Alert`
