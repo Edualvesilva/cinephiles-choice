@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   logotmdb: { alignItems: "center", marginVertical: 15 },
   appName: {
     fontWeight: "bold",
-    color: "#5351a6",
+    color: "#5451a6",
   },
 });

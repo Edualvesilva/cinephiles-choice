@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Monoton-Regular",
     fontSize: 36,
-    color: "#5a51a6",
+    color: "#5451a6",
   },
   viewButtons: {
     flex: 4,
