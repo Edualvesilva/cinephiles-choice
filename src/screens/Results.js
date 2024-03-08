@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
-
+import CardMovie from "../components/CardMovie";
 /* prop route 
 special prop and defined by the react navigation. and through the prop is possible acess the values of screen navigation. */
 export default function Results({ route }) {
@@ -13,7 +13,7 @@ export default function Results({ route }) {
   useEffect(() => {
     async function searchMovies() {
       try {
-        const answer = await api.get(`search/movie`, {
+        const answer = await api.get(`/search/movie`, {
           params: {
             include_adult: false,
             language: "en-US",
@@ -41,7 +41,7 @@ export default function Results({ route }) {
             keyExtractor={(item) => item.id}
             /* this prop will render each item/movie in a component */
             renderItem={({ item }) => {
-              return <Text>{item.title}</Text>;
+              return <CardMovie movie={item} />;
             }}
           />
         </View>
