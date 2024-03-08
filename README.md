@@ -6,6 +6,17 @@ An example of a cross-platform native app created with React Native and Expo.
 
 Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSCode to ease the use of programming components in this project.
 
+## Branch 06
+
+- Signing up in the Api TheMovieDB
+- Creation of an API Key
+- Configuration of an enviroment variable in the file `.env` containing the API Key Provided by Expo.
+
+### Consume of Api's data
+
+- Installation of the lib **oxios**
+- Configuration/Exportating of `services/api-moviedb.js` containing the basic programming for accessing the API used in different parts of the app
+
 ## Branch 05
 
 - Components/native resources: `TextInput`,`Vibration` and `Alert`
@@ -45,7 +56,7 @@ In the `app.js` file, we import `navigationContainer` and `createNativeStackNavi
 
 ## Branch 02
 
-### Utilizationo of additional fonts
+### Utilization of additional fonts
 
 - Download the font's archives (format TFF or OTF)
 - Place them in the folder `assets/fonts`.
