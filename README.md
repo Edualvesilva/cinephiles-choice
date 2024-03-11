@@ -6,6 +6,12 @@ An example of a cross-platform native app created with React Native and Expo.
 
 Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSCode to ease the use of programming components in this project.
 
+## Branch 07
+
+- Loading using `ActivyIndicator`
+- In the Results component, I applied a personalized FlatList component to handle scenarios where the searched movie is not found (notfound/ListEmptyComponent), as well as to separate each element within the FlatList (Separator/ItemSeparatorComponent).
+- In the `CardMovie` component, we implemented a conditional check to load an alternative image if a movie doesn't have one available, along with adding icons to the buttons.
+
 ## Branch 06
 
 - Signing up in the Api TheMovieDB
