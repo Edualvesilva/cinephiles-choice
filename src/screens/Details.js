@@ -28,7 +28,7 @@ export default function Details({ route }) {
         <View style={styles.Content}>
           <ScrollView>
             <Text style={[styles.text, styles.Rating]}>
-              Rating: {vote_average}
+              Rating: {vote_average.toFixed(1)}
             </Text>
             <Text style={[styles.text, styles.Release]}>
               Release: {FormatData(release_date)}
