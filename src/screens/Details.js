@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import SafeContainer from "../components/SafeContainer";
-
+import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 export default function Details({ route }) {
   const { movie } = route.params;
   const { title, release_date, overview, vote_average, backdrop_path } = movie;
@@ -21,17 +21,21 @@ export default function Details({ route }) {
       <View style={styles.subContainer}>
         <ImageBackground
           style={styles.Background}
-          source={{ uri: `https://image.tmdb.org/t/p/w500/${backdrop_path}` }}
+          source={
+            backdrop_path
+              ? { uri: `https://image.tmdb.org/t/p/original/${backdrop_path}` }
+              : imagemAlternativa
+          }
         >
           <Text style={styles.title}>{title}</Text>
         </ImageBackground>
         <View style={styles.Content}>
-          <ScrollView>
+          <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={[styles.text, styles.Rating]}>
-              Rating: {vote_average.toFixed(1)}
+              ⭐ Rating: {vote_average.toFixed(2)}
             </Text>
             <Text style={[styles.text, styles.Release]}>
-              Release: {FormatData(release_date)}
+              📆 Release: {FormatData(release_date)}
             </Text>
             <Text style={[styles.text, styles.Description]}>
               Description: {overview}
