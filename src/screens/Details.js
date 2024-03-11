@@ -35,10 +35,11 @@ export default function Details({ route }) {
               ⭐ Rating: {vote_average.toFixed(2)}
             </Text>
             <Text style={[styles.text, styles.Release]}>
-              📆 Release: {FormatData(release_date)}
+              📆 Release:{" "}
+              {release_date ? FormatData(release_date) : "Not date Provided :("}
             </Text>
             <Text style={[styles.text, styles.Description]}>
-              Description: {overview}
+              {overview || <Text>No description Provided</Text>}
             </Text>
           </ScrollView>
         </View>
