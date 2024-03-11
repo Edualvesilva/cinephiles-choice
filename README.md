@@ -6,6 +6,11 @@ An example of a cross-platform native app created with React Native and Expo.
 
 Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSCode to ease the use of programming components in this project.
 
+## Branch 08
+
+- Creation of the screen `Details` and addition of it on `Stack` in `App.js`
+- In `CardMovie`, we utilized the `useNavigation` hook to enable navigation functionality for the **Read More** button
+
 ## Branch 07
 
 - Loading using `ActivyIndicator`
