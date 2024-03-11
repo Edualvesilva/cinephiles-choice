@@ -6,20 +6,35 @@ import {
   View,
 } from "react-native";
 import SafeContainer from "../components/SafeContainer";
-import background from "../../assets/images/foto-alternativa.jpg";
-export default function Details() {
+
+export default function Details({ route }) {
+  const { movie } = route.params;
+  const { title, release_date, overview, vote_average, backdrop_path } = movie;
+
+  const FormatData = (release_date) => {
+    const parts = release_date.split("-");
+    return `${parts[1]}/${parts[2]}/${parts[0]}`;
+  };
+
   return (
     <SafeContainer>
       <View style={styles.subContainer}>
-        <ImageBackground style={styles.Background} source={background}>
-          <Text style={styles.title}>Title</Text>
+        <ImageBackground
+          style={styles.Background}
+          source={{ uri: `https://image.tmdb.org/t/p/w500/${backdrop_path}` }}
+        >
+          <Text style={styles.title}>{title}</Text>
         </ImageBackground>
         <View style={styles.Content}>
           <ScrollView>
-            <Text style={[styles.text, styles.Rating]}>Rate...</Text>
-            <Text style={[styles.text, styles.Release]}>release...</Text>
+            <Text style={[styles.text, styles.Rating]}>
+              Rating: {vote_average}
+            </Text>
+            <Text style={[styles.text, styles.Release]}>
+              Release: {FormatData(release_date)}
+            </Text>
             <Text style={[styles.text, styles.Description]}>
-              Description...
+              Description: {overview}
             </Text>
           </ScrollView>
         </View>

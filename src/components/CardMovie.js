@@ -28,7 +28,7 @@ export default function CardMovie({ movie }) {
         <View style={styles.buttons}>
           <Pressable
             style={styles.button}
-            onPress={() => navigation.navigate("Details")}
+            onPress={() => navigation.navigate("Details", { movie })}
           >
             <Text style={styles.ButtonText}>
               <Ionicons name="book" size={12} />
