@@ -1,6 +1,6 @@
 // rnfs
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
-
+import { Ionicons } from "@expo/vector-icons";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 
 export default function CardMovie({ movie }) {
@@ -11,17 +11,27 @@ export default function CardMovie({ movie }) {
       <Image
         resizeMode="cover"
         style={styles.image}
-        source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
+        source={
+          poster_path
+            ? { uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }
+            : imagemAlternativa
+        }
       />
       <View style={styles.body}>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.buttons}>
           <Pressable style={styles.button}>
-            <Text style={styles.ButtonText}>Read More</Text>
+            <Text style={styles.ButtonText}>
+              <Ionicons name="book" size={12} />
+              Read More
+            </Text>
           </Pressable>
 
           <Pressable style={styles.button}>
-            <Text style={styles.ButtonText}>Save</Text>
+            <Text style={styles.ButtonText}>
+              <Ionicons name="add-circle" size={12} />
+              Save
+            </Text>
           </Pressable>
         </View>
       </View>
