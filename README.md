@@ -10,6 +10,7 @@ Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSC
 
 - We created the Details screen and added it to the Stack navigator in App.js.
 - In `CardMovie`, we utilized the `useNavigation` hook to enable navigation functionality for the **Read More** button
+- In `app.js` on `stack.Screen Details`, adding a prop `options` configured to show a `Button` responsable for allowing the navigation to Home
 
 ## Branch 07
 
