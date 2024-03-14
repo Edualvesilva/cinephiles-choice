@@ -1,5 +1,5 @@
 // rnfs
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 
@@ -7,11 +7,33 @@ import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { useNavigation } from "@react-navigation/native";
 
 export default function CardMovie({ movie }) {
-  /* Extracting the movie's information (title and image)   */
+  console.log(movie);
   const { title, poster_path } = movie;
 
-  /* Acess to navigation resources */
   const navigation = useNavigation();
+
+  const save = async () => {
+    try {
+      /* 1) Verify/load the favorites stored on AsyncStorage. using getItem to analyze if exist an storage with the name provided (@favoritesEdu). Existing, it's loaded to the const favoriteMovies. If it doesn't exist, it'll be created */
+      const favoriteMovies = await AsyncStorage.getItem("@favoritesEdu");
+
+      /* 2) Verify/Create a list of favorite's movies (data). if favoriteMovies exist (meaning there's data stored), it will be converted from a string into an object using JSON.parse(). Otherwise, if there is no data stored, favoriteMovies will be initialized as an empty array.  */
+      const movieList = favoriteMovies ? JSON.parse(favoriteMovies) : [];
+
+      /* 3) Verify if the movie already exists on the list. We check if there's any movie in the movieList array 
+        that matches the ID of the current movie we're considering. 
+        If such a movie exists, alreadyHasMovie is set to true.   */
+      const alreadyHasMovie = movieList.some((movieOnTheList) => {
+        return movieOnTheList.id === movie.id;
+      });
+
+      /* 4) if the movie isn't on the list so add it in */
+      /* 5)  use the AsyncStorage to save in the offline storage of the device  */
+    } catch (error) {
+      console.log("Error: " + error);
+      Alert.alert("Error!", "somethin went wrong :(");
+    }
+  };
   return (
     <View style={styles.styledCard}>
       <Image
@@ -36,7 +58,7 @@ export default function CardMovie({ movie }) {
             </Text>
           </Pressable>
 
-          <Pressable style={styles.button}>
+          <Pressable style={styles.button} onPress={save}>
             <Text style={styles.ButtonText}>
               <Ionicons name="add-circle" size={12} />
               Save
