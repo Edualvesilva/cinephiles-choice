@@ -16,7 +16,6 @@ import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CardMovie({ movie }) {
-  console.log(movie);
   const { title, poster_path } = movie;
 
   const navigation = useNavigation();
@@ -39,7 +38,7 @@ export default function CardMovie({ movie }) {
       /* 4) if the movie isn't on the list so add it in */
 
       /* 4.1) if already has a movie, We tell the user  */
-      if (movieOnTheList) {
+      if (alreadyHasMovie) {
         Alert.alert("Ops!", "You Already saved this movie");
         Vibration.vibrate();
         return;
