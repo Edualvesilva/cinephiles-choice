@@ -9,6 +9,7 @@ import {
 import SafeContainer from "../components/SafeContainer";
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Favorites() {
   /* useState to register the data loaded from Storage. */
@@ -37,11 +38,22 @@ export default function Favorites() {
   return (
     <SafeContainer>
       <View style={styles.subContainer}>
-        <View style={styles.subContainer}>
-          <View style={styles.viewFavorites}>
-            <Text style={styles.text}>Favorites...</Text>
-          </View>
+        <View style={styles.viewFavorites}>
+          <Text style={styles.text}>
+            Quantity of Favorites: {favoritesList.length}
+          </Text>
+
+          <Pressable style={styles.button}>
+            <Text style={styles.TextButton}>
+              <Ionicons name="trash" size={16} /> Delete Favorites
+            </Text>
+          </Pressable>
         </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {favoritesList.map((movie) => {
+            return <Text key={movie.id}>{movie.title}</Text>;
+          })}
+        </ScrollView>
       </View>
     </SafeContainer>
   );
