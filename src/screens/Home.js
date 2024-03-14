@@ -23,7 +23,10 @@ export default function Home({ navigation }) {
           </Text>
         </Pressable>
 
-        <Pressable style={styles.button}>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Favorites")}
+        >
           <Text style={styles.buttonText}>
             <Ionicons name="star" size={16} color="gold" />
             Favorites

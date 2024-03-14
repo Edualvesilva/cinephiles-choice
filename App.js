@@ -8,7 +8,7 @@ import Privacy from "./src/screens/Privacy";
 import Searchmovies from "./src/screens/Searchmovies";
 import Results from "./src/screens/Results";
 import Details from "./src/screens/Details";
-
+import Favorites from "./src/screens/Favorites";
 // Initialization stack navigation mechanism
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +57,7 @@ export default function App() {
               };
             }}
           />
+          <Stack.Screen name="Favorites" component={Favorites} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
