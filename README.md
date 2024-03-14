@@ -6,6 +6,10 @@ An example of a cross-platform native app created with React Native and Expo.
 
 Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSCode to ease the use of programming components in this project.
 
+## Branch 09
+
+`AsyncStorage` is a lib maintained by the Expo team that allows store data **offline** in format of `string` on the user's device. it's a lib similar to the API web `localStorage` used in WebSites.
+
 ## Branch 08
 
 - We created the Details screen and added it to the Stack navigator in App.js.
