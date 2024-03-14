@@ -18,7 +18,10 @@ export default function Favorites() {
   useEffect(() => {
     const LoadFavorites = async () => {
       try {
+        /* Acessing the created storage before and saving the data's strings */
         const data = await AsyncStorage.getItem("@favoritesEdu");
+
+        /* If there's data, turn it into a object (JSON.parse) and update the state with a favoritesList */
         if (data) {
           setfavoritesList(JSON.parse(data));
         }
