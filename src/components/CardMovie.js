@@ -1,10 +1,19 @@
 // rnfs
-import { StyleSheet, Text, View, Image, Pressable, Alert } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Pressable,
+  Alert,
+  Vibration,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 
 /* Hook needed because we aren't in a screen with acess to the prop Navigation */
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CardMovie({ movie }) {
   console.log(movie);
@@ -28,7 +37,20 @@ export default function CardMovie({ movie }) {
       });
 
       /* 4) if the movie isn't on the list so add it in */
+
+      /* 4.1) if already has a movie, We tell the user  */
+      if (movieOnTheList) {
+        Alert.alert("Ops!", "You Already saved this movie");
+        Vibration.vibrate();
+        return;
+      }
+      /* 4.2) else, we add the movie on the list */
+      movieList.push(movie);
+
       /* 5)  use the AsyncStorage to save in the offline storage of the device  */
+      await AsyncStorage.setItem("@favoritesEdu", JSON.stringify(movieList));
+
+      Alert.alert("Favorites", `${title} was saved Sucessfully`);
     } catch (error) {
       console.log("Error: " + error);
       Alert.alert("Error!", "somethin went wrong :(");
