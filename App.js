@@ -1,4 +1,4 @@
-import { StatusBar } from "react-native";
+import { Button, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -42,7 +42,21 @@ export default function App() {
             options={{ title: "Find Your Movie" }}
           />
           <Stack.Screen name="Results" component={Results} />
-          <Stack.Screen name="Details" component={Details} />
+          <Stack.Screen
+            name="Details"
+            component={Details}
+            options={({ navigation }) => {
+              return {
+                headerRight: () => (
+                  <Button
+                    color="black"
+                    title="Home"
+                    onPress={() => navigation.navigate("Home")}
+                  />
+                ),
+              };
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
