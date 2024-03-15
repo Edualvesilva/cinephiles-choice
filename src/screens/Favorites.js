@@ -57,7 +57,7 @@ export default function Favorites() {
                   <Text style={styles.title}>{movie.title}</Text>
                 </Pressable>
                 <Pressable style={styles.deleteButton}>
-                  <Ionicons name="trash" size={16} />
+                  <Ionicons color="white" name="trash" size={16} />
                 </Pressable>
               </View>
             );
@@ -109,5 +109,10 @@ const styles = StyleSheet.create({
   },
   MovieButton: {
     flex: 1,
+  },
+  deleteButton: {
+    backgroundColor: "darkred",
+    padding: 8,
+    borderRadius: 4,
   },
 });
