@@ -6,6 +6,30 @@ An example of a cross-platform native app created with React Native and Expo.
 
 Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSCode to ease the use of programming components in this project.
 
+## Branch 10
+
+### Explanation of how to use build using Expo EAS
+
+1. Acess your Expo account and Create a new project in Expo EAS: https://expo.dev
+2. Install `eas-cli`
+3. Add the App' project id
+4. Veriify the logged account: eas whoami
+
+   - If you're not logged in, use : `eas login`
+   - If you're logged and want to use another account, use : `eas logout`
+
+5. Configuration of the build (compiling): `eas build:configure`
+6. Choose Android! this will create a file called `eas.json`
+7. it's necessary to modify the segment `preview` inside the `eas.json`, adding the code below:
+
+```json
+"developmentClient" : true,
+    "android" : {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+    },
+```
+
 ## Branch 09
 
 `AsyncStorage` is a lib maintained by the Expo team that allows store data **offline** in format of `string` on the user's device. it's a lib similar to the API web `localStorage` used in WebSites.
