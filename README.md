@@ -21,6 +21,7 @@ Install the **ES 7+ React/Redux/GraphQL/React-Native snippets** extension in VSC
 5. Configuration of the build (compiling): `eas build:configure`
 6. Choose Android! this will create a file called `eas.json`
 7. it's necessary to modify the segment `preview` inside the `eas.json`, adding the code below:
+8. Iniciate the process of build/compiling: `eas build --profile preview`
 
 ```json
 "developmentClient" : true,
