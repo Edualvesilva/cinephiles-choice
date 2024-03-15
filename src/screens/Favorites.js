@@ -44,7 +44,7 @@ export default function Favorites() {
           </Text>
 
           <Pressable style={styles.button}>
-            <Text style={styles.TextButton}>
+            <Text style={styles.DeleteFavorites}>
               <Ionicons name="trash-outline" size={16} /> Delete Favorites
             </Text>
           </Pressable>
@@ -52,7 +52,7 @@ export default function Favorites() {
         <ScrollView showsVerticalScrollIndicator={false}>
           {favoritesList.map((movie) => {
             return (
-              <View style={styles.item}>
+              <View key={movie.id} style={styles.item}>
                 <Pressable style={styles.MovieButton}>
                   <Text style={styles.title}>{movie.title}</Text>
                 </Pressable>
@@ -92,7 +92,22 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
 
-  TextButton: {
+  DeleteFavorites: {
     color: "red",
+  },
+  item: {
+    padding: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#eee8fc",
+    marginBottom: 8,
+    borderRadius: 4,
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 14,
+  },
+  MovieButton: {
+    flex: 1,
   },
 });
