@@ -33,8 +33,29 @@ export default function Favorites({ navigation }) {
     };
     LoadFavorites();
   }, []);
-  // log on State
-  console.log(favoritesList);
+
+  const deleteAllFavorites = async () => {
+    Alert.alert(
+      "Delete all?",
+      "Are you sure you want to delete ALL Favorites?",
+      [
+        /* Just the IOS is Stylable/Customized in here */
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Confirm",
+          style: "destructive",
+          onPress: async () => {
+            /* Removing the favorites from the Storage */
+            await AsyncStorage.removeItem("@favoritesEdu");
+
+            /* Updating the state so the user will see on the screen the delete */
+            setfavoritesList([]);
+          },
+        },
+      ]
+    );
+  };
+
   return (
     <SafeContainer>
       <View style={styles.subContainer}>
@@ -43,7 +64,7 @@ export default function Favorites({ navigation }) {
             Quantity of Favorites: {favoritesList.length}
           </Text>
 
-          <Pressable style={styles.button}>
+          <Pressable onPress={deleteAllFavorites} style={styles.button}>
             <Text style={styles.DeleteFavorites}>
               <Ionicons name="trash-outline" size={16} /> Delete Favorites
             </Text>
@@ -61,7 +82,7 @@ export default function Favorites({ navigation }) {
                 >
                   <Text style={styles.title}>{movie.title}</Text>
                 </Pressable>
-                <Pressable style={styles.deleteButton}>
+                <Pressable onPress={() => {}} style={styles.deleteButton}>
                   <Ionicons color="white" name="trash" size={16} />
                 </Pressable>
               </View>
