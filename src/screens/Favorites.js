@@ -56,6 +56,27 @@ export default function Favorites({ navigation }) {
     );
   };
 
+  const deleteMovie = (movieId) => {
+    Alert.alert(
+      "Are you sure?",
+      "Do you want to delete this movie from Favorites?",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Confirm",
+          style: "destructive",
+          onPress: () => {
+            AsyncStorage.removeItem(String(movieId));
+            const updatedList = favoritesList.filter((item) => {
+              return item.id !== movieId;
+            });
+            setfavoritesList(updatedList);
+          },
+        },
+      ]
+    );
+  };
+
   return (
     <SafeContainer>
       <View style={styles.subContainer}>
@@ -64,11 +85,15 @@ export default function Favorites({ navigation }) {
             Quantity of Favorites: {favoritesList.length}
           </Text>
 
-          <Pressable onPress={deleteAllFavorites} style={styles.button}>
-            <Text style={styles.DeleteFavorites}>
-              <Ionicons name="trash-outline" size={16} /> Delete Favorites
-            </Text>
-          </Pressable>
+          {favoritesList.length == 0 ? (
+            <Text>There is no Movies</Text>
+          ) : (
+            <Pressable onPress={deleteAllFavorites} style={styles.button}>
+              <Text style={styles.DeleteFavorites}>
+                <Ionicons name="trash-outline" size={16} /> Delete Favorites
+              </Text>
+            </Pressable>
+          )}
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           {favoritesList.map((movie) => {
@@ -82,7 +107,10 @@ export default function Favorites({ navigation }) {
                 >
                   <Text style={styles.title}>{movie.title}</Text>
                 </Pressable>
-                <Pressable onPress={() => {}} style={styles.deleteButton}>
+                <Pressable
+                  onPress={() => deleteMovie(movie.id)}
+                  style={styles.deleteButton}
+                >
                   <Ionicons color="white" name="trash" size={16} />
                 </Pressable>
               </View>
