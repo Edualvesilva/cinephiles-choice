@@ -56,25 +56,12 @@ export default function Favorites({ navigation }) {
     );
   };
 
-  const deleteMovie = (movieId) => {
-    Alert.alert(
-      "Are you sure?",
-      "Do you want to delete this movie from Favorites?",
-      [
-        { text: "Cancel", style: "cancel" },
-        {
-          text: "Confirm",
-          style: "destructive",
-          onPress: () => {
-            AsyncStorage.removeItem(String(movieId));
-            const updatedList = favoritesList.filter((item) => {
-              return item.id !== movieId;
-            });
-            setfavoritesList(updatedList);
-          },
-        },
-      ]
-    );
+  const deleteMovie = async (movieId) => {
+    const UpdatedList = favoritesList.filter((movie) => {
+      return movie.id !== movieId;
+    });
+    setfavoritesList(UpdatedList);
+    await AsyncStorage.setItem("@favoritesEdu", JSON.stringify(UpdatedList));
   };
 
   return (
