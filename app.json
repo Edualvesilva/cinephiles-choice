@@ -2,7 +2,7 @@
   "expo": {
     "name": "Cinephile's Choice",
     "slug": "cinephiles-choice",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/images/dahora.png",
     "userInterfaceStyle": "light",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -24,9 +22,7 @@
       },
       "package": "com.edualvesilv4.cinephileschoice"
     },
-    "plugins": [
-      "expo-font"
-    ],
+    "plugins": ["expo-font"],
     "extra": {
       "eas": {
         "projectId": "bf9ef12f-3816-4d53-bc48-a00274c08abb"
